@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ProxyMaster Pro — Premium Proxy Checker</title>
+<link rel="stylesheet" href="style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="bg-orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+
+<header class="navbar">
+  <div class="logo">
+    <div class="logo-icon">⚡</div>
+    <span>ProxyMaster <b>Pro</b></span>
+  </div>
+  <nav>
+    <a href="#checker">Checker</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+  </nav>
+  <button class="btn-glow">Get Pro</button>
+</header>
+
+<section class="hero">
+  <div class="badge">🔥 #1 Premium Proxy Checker</div>
+  <h1>Check Proxies at <span class="grad">Lightning Speed</span></h1>
+  <p>Advanced proxy validation with real-time speed test, anonymity detection & bulk processing.</p>
+  <div class="hero-stats">
+    <div><b>99.9%</b><span>Accuracy</span></div>
+    <div><b>&lt;1s</b><span>Avg Check</span></div>
+    <div><b>10K+</b><span>Bulk Support</span></div>
+  </div>
+</section>
+
+<section class="checker-wrap" id="checker">
+  <div class="tabs">
+    <button class="tab active" data-tab="single">Single Proxy</button>
+    <button class="tab" data-tab="bulk">Bulk Upload</button>
+  </div>
+
+  <!-- SINGLE -->
+  <div class="tab-panel active" id="single">
+    <div class="input-grid">
+      <div class="field">
+        <label>Proxy IP / Host</label>
+        <input type="text" id="ip" placeholder="192.168.1.1 or proxy.example.com"/>
+      </div>
+      <div class="field">
+        <label>Port</label>
+        <input type="text" id="port" placeholder="8080"/>
+      </div>
+      <div class="field">
+        <label>Username <small>(optional)</small></label>
+        <input type="text" id="user" placeholder="leave blank if none"/>
+      </div>
+      <div class="field">
+        <label>Password <small>(optional)</small></label>
+        <input type="password" id="pass" placeholder="leave blank if none"/>
+      </div>
+    </div>
+    <button class="btn-primary" id="checkSingle">🚀 Check Proxy</button>
+  </div>
+
+  <!-- BULK -->
+  <div class="tab-panel" id="bulk">
+    <div class="upload-box" id="dropZone">
+      <input type="file" id="fileInput" accept=".txt,.csv" hidden/>
+      <div class="upload-icon">📁</div>
+      <h3>Drop your proxy file here</h3>
+      <p>Supported: .txt / .csv — one proxy per line</p>
+      <p class="hint">Format: <code>ip:port</code> or <code>ip:port:user:pass</code></p>
+      <button class="btn-outline" onclick="document.getElementById('fileInput').click()">Choose File</button>
+    </div>
+    <button class="btn-primary" id="checkBulk">⚡ Check All Proxies</button>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap hidden" id="progressWrap">
+    <div class="progress-info">
+      <span id="progressText">Checking...</span>
+      <span id="progressPct">0%</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results hidden" id="results">
+    <div class="results-header">
+      <h2>Results</h2>
+      <div class="result-actions">
+        <span class="stat-pill live" id="liveCount">Live: 0</span>
+        <span class="stat-pill dead" id="deadCount">Dead: 0</span>
+        <button class="btn-small" id="exportCsv">⬇ CSV</button>
+        <button class="btn-small" id="exportTxt">⬇ TXT</button>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table id="resultTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Proxy</th>
+            <th>Status</th>
+            <th>Speed</th>
+            <th>Country</th>
+            <th>Anonymity</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <h2>Why <span class="grad">ProxyMaster Pro?</span></h2>
+  <div class="feature-grid">
+    <div class="card"><div class="ic">⚡</div><h3>Ultra Fast</h3><p>Multi-threaded checks with sub-second response times.</p></div>
+    <div class="card"><div class="ic">🔒</div><h3>Secure</h3><p>Your proxies are never logged or stored.</p></div>
+    <div class="card"><div class="ic">🌍</div><h3>Geo Detect</h3><p>Auto-detect country & ISP of each proxy.</p></div>
+    <div class="card"><div class="ic">📦</div><h3>Bulk Ready</h3><p>Upload thousands of proxies at once.</p></div>
+    <div class="card"><div class="ic">🎯</div><h3>Accurate</h3><p>99.9% detection rate for live/dead proxies.</p></div>
+    <div class="card"><div class="ic">📤</div><h3>Export</h3><p>Download results as CSV or TXT instantly.</p></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 ProxyMaster Pro — Built for professionals.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
